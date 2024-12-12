@@ -1,0 +1,37 @@
+name = "StatsEEC"
+uuid = "f27b7d28-1907-4fd4-be8f-240f616cab64"
+authors = ["Gabriel Barbier"]
+version = "1.0.0-DEV"
+
+[deps]
+ArviZ = "131c737c-5715-5e2e-ad31-c244f01c1dc7"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+EquivalentCircuits = "da5bd070-f609-4e16-a30d-de86b3faa756"
+HypothesisTests = "09f84164-cd44-5f33-b23f-e6b0d136a0d5"
+MCMCChains = "c7f686f2-ff18-58e9-bc7b-31028e88f75d"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+StatsPlots = "f3b207a7-027a-5e70-b257-86293d7955fd"
+Turing = "fce5fe82-541a-59a6-adf8-730c64b5f9a0"
+
+[compat]
+ArviZ = "0.12.0"
+CSV = "0.10.15"
+DataFrames = "1.7.0"
+Distributions = "0.25.113"
+EquivalentCircuits = "0.3.1"
+HypothesisTests = "0.11.3"
+MCMCChains = "6.0.7"
+Plots = "1.40.9"
+StatsBase = "0.33.21"
+StatsPlots = "0.15.7"
+Turing = "0.35.3"
+julia = "1.6.7"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
