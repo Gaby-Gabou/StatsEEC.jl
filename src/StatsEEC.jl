@@ -1,6 +1,6 @@
 module StatsEEC
 
-export GenerateCircuit, BayesianInference, EvaluateCircuit, PlotResults, BestCircuit
+export GenerateCircuit, BayesianInference, EvaluateCircuit, PlotEstimatedImpedance, BestCircuit
 using Plots
 using StatsPlots
 using Distributions
