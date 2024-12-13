@@ -12,8 +12,8 @@ function EvaluateCircuit(Finalres)
             if Finalres[i][3][Symbol("param[$j]")].nt[2][1]>1.05
                 pen[i]+=1
             end
-            reshdi=hdi(Vector(MCMCChains.get(Finalres[i][5], section=:parameters)[2][j][:,1]))
-            if pvalue(JarqueBeraTest(Vector(MCMCChains.get(Finalres[i][5], section=:parameters)[2][j][:,1])))<0.05 || (reshdi[2]/reshdi[1])>10
+            reshdi=hdi(Vector(get_params(Finalres[i][5]).param[j][:,1]))
+            if pvalue(JarqueBeraTest(Vector(get_params(Finalres[i][5]).param[j][:,1])))<0.05 || (reshdi[2]/reshdi[1])>10
                 pen[i]+=1
             end
         end
