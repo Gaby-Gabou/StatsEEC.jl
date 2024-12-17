@@ -3,7 +3,7 @@ using Test
 
 @testset "StatsEEC.jl" begin
     #test each function 
-    donnee=CSV.read("C:/Users/gab78/Downloads/example_measurements.csv", DataFrame,header=false)
+    donnee=CSV.read("example_measurements.csv", DataFrame,header=false)
     Mes=donnee.Column1 .+ donnee.Column2 .* im
     Freq=donnee.Column3
     @test length(Mes)==length(Freq)
@@ -23,5 +23,5 @@ using Test
     StatsEEC.PlotEstimatedImpedance(Best, Mes, Freq)
 
     #test the function BestCircuit who is a combination of the previous functions
-    StatsEEC.BestCircuit("C:/Users/gab78/Downloads/Data/OER_10min.csv", 5)
+    StatsEEC.BestCircuit("example_measurements.csv", 5)
 end
