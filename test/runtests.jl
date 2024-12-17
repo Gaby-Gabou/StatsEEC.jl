@@ -2,22 +2,8 @@ using StatsEEC
 using Test
 using CSV,DataFrames
 
-StatsEEC.BestCircuit("C:/Users/gab78/Downloads/Data/OER_10min.csv", 5)
-
-donnee=CSV.read("C:/Users/gab78/Downloads/Data/OER_10min.csv", DataFrame,header=false)
-Mes=donnee.Column1 .+ donnee.Column2 .* im
-Freq=donnee.Column3
-
-Circ=StatsEEC.GenerateCircuit(Mes, Freq, 3)
-
-BI=StatsEEC.BayesianInference(Mes, Freq, Circ)
-
-Best=StatsEEC.EvaluateCircuit(BI)
-
-StatsEEC.PlotEstimatedImpedance(Best, Mes, Freq)
-
-
 @testset "StatsEEC.jl" begin
+    #test each function 
     donnee=CSV.read("C:/Users/gab78/Downloads/example_measurements.csv", DataFrame,header=false)
     Mes=donnee.Column1 .+ donnee.Column2 .* im
     Freq=donnee.Column3
@@ -37,5 +23,6 @@ StatsEEC.PlotEstimatedImpedance(Best, Mes, Freq)
 
     StatsEEC.PlotEstimatedImpedance(Best, Mes, Freq)
 
-    #StatsEEC.BestCircuit("C:/Users/gab78/Downloads/Data/OER_10min.csv", 5)
+    #test the function BestCircuit who is a combination of the previous functions
+    StatsEEC.BestCircuit("C:/Users/gab78/Downloads/Data/OER_10min.csv", 5)
 end
