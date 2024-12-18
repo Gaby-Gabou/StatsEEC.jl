@@ -1,5 +1,6 @@
 using StatsEEC
 using Test
+using CSV, DataFrames
 
 @testset "StatsEEC.jl" begin
     #test each function 

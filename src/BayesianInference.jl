@@ -1,10 +1,27 @@
+"""
+MSE(Mes,SimMes)
+Takes the measured impedance and the simulated impedance and return the mean squared error.
+"""
+
 function MSE(Mes,SimMes)
     return sum((abs.(Mes .- SimMes)).^2)/length(Mes)
 end
 
+"""
+R2(Mes,SimMes)
+Takes the measured impedance and the simulated impedance and return the R².
+"""
+
 function R2(Mes,SimMes)
     return 1-( sum((abs.(Mes .- SimMes)).^2) / sum((abs.(Mes .- mean(Mes))).^2) )
 end
+
+"""
+BayesianInference(Mes, Freq, Circuits)
+Perform a Bayesian inference on the circuits. The function uses the Turing package to perform the inference.
+The function takes the measurements of the impedance, the frequencies and the circuits to infer.
+The function returns a vector of dictionnaries containing differnts values and information that describes the circuit.
+"""
 
 function BayesianInference(Mes, Freq, Circuits)
     @info "Begining of the Bayesian inferance"

@@ -1,3 +1,10 @@
+"""
+EvaluateCircuit(Finalres)
+Takes a vector of dictionnaries in input.
+The function evaluates the circuits and returns the best circuit.
+The evaluation is based on the R2, the rhat test, the shape of the prosterior distribution by the JarqueBeera test and the waic criteria.
+"""
+
 function EvaluateCircuit(Finalres)
     @info "Evaluation of the circuits"
     n=length(Finalres)
