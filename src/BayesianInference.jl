@@ -18,7 +18,7 @@ end
 BayesianInference(Mes, Freq, Circuits)
 Perform a Bayesian inference on the circuits. The function uses the Turing package to perform the inference.
 The function takes the measurements of the impedance, the frequencies and the circuits to infer.
-The function returns a vector of dictionnaries containing differnts values and information that describes the circuit.
+The function returns a vector of arrays containing differnts values and information that describes the circuit.
 """
 function BayesianInference(Mes, Freq, Circuits)
     @info "Begining of the Bayesian inferance"

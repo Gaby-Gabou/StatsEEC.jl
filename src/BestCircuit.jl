@@ -18,4 +18,6 @@ function BestCircuit(path::String, nb=10)
     @info "Best Circuit : $Best"
     
     PlotEstimatedImpedance(Best, Mes, Freq)
+    
+    return Best
 end
