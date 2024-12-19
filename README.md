@@ -20,7 +20,7 @@ Pkg.add(url="https://github.com/Gaby-Gabou/StatsEEC.jl")
 ### With one function
 
 You can use a function that, giving path of the CSV file and eventually the number of circuits generated, return the Best one.
-The data in the CSV file have to be in a particular order, starting with the real part, then the imaginary part and finally the frequencies. You can see the structure needed in the example_measurements.csv file.
+<u>The data in the CSV file have to be in a particular order, starting with the real part, then the imaginary part and finally the frequencies.</u> You can see the structure needed in the example_measurements.csv file.
 
 `BestCircuit(path, nb)`
 - `path` : the path of the CSV file
