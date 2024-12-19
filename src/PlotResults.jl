@@ -8,7 +8,6 @@ legend is a boolean to display the legend or not.
 mc is the color of the plot.
 mode is the mode of the plot, "scat" for scatter plot and else for line plot.
 """
-
 function nyquist(res, txt="fig", legend=true, mc=:blue, mode="scat")
     if mode=="scat"
         scatter(real(res),-imag(res), label=txt, legend=legend, mc=mc)
@@ -27,7 +26,6 @@ legend is a boolean to display the legend or not.
 mc is the color of the plot.
 mode is the mode of the plot, "scat" for scatter plot and else for line plot.
 """
-
 function nyquist!(res, txt="fig", legend=true, mc=:black, mode="scat")
     if mode=="scat"
         scatter!(real(res),-imag(res), label=txt, legend=legend, mc=mc)
@@ -42,7 +40,6 @@ Takes a circuit, the measurements and the frequencies.
 Plot the Nyquist plot of the measured impedance.
 Plot also the Nyquist plot of the simulated impedance of the circuit, with the parameters of the circuit sampled from the posterior distribution obtained after the bayesian inference.
 """
-
 function PlotEstimatedImpedance(Circ, Mes, Freq)
     P=plot()
     for i in 1:100
