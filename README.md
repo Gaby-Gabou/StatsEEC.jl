@@ -56,6 +56,8 @@ If you prefer, you can use all the function present in the BestCircuit function.
 ```julia
 using StatsEEC, CSV, DataFrames
 
+path="example_measurements.csv"
+
 donnee=CSV.read(path, DataFrame,header=false)
 Mes=donnee.Column1 .+ donnee.Column2 .* im
 Freq=donnee.Column3
