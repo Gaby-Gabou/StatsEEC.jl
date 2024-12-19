@@ -11,8 +11,9 @@ This package is usefull to get the best equivalent electrical circuit based on m
 
 For now, the only way to install it is directly via the github link.
 ```julia
-    using Pkg
-     Pkg.add(url="https://github.com/Gaby-Gabou/StatsEEC.jl")
+using Pkg
+
+Pkg.add(url="https://github.com/Gaby-Gabou/StatsEEC.jl")
 ```
 
 ## How to use it
@@ -26,9 +27,9 @@ The data in the CSV file have to be in a particular order, starting with the rea
 - `nb` : the number of circuits generated
 
 ```julia
-    using StatsEEC
+using StatsEEC
 
-    BestCircuit("example_measurements.csv",20)
+BestCircuit("example_measurements.csv",20)
 ```
 ### Step by Step
 
@@ -53,19 +54,19 @@ If you prefer, you can use all the function present in the BestCircuit function.
 - `Freq` : the frenquecies
 
 ```julia
-    using StatsEEC, CSV, DataFrames
+using StatsEEC, CSV, DataFrames
 
-    donnee=CSV.read(path, DataFrame,header=false)
-    Mes=donnee.Column1 .+ donnee.Column2 .* im
-    Freq=donnee.Column3
+donnee=CSV.read(path, DataFrame,header=false)
+Mes=donnee.Column1 .+ donnee.Column2 .* im
+Freq=donnee.Column3
 
-    Circuits=GenerateCircuit(Mes, Freq, nb)
+Circuits=GenerateCircuit(Mes, Freq, nb)
 
-    BI=BayesianInference(Mes, Freq, Circuits)
+BI=BayesianInference(Mes, Freq, Circuits)
 
-    Best=EvaluateCircuit(BI)
+Best=EvaluateCircuit(BI)
 
-    @info "Best Circuit : $Best"
-    
-    PlotEstimatedImpedance(Best, Mes, Freq)
+@info "Best Circuit : $Best"
+
+PlotEstimatedImpedance(Best, Mes, Freq)
 ```
